@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .container, form{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .container > div, input{
+        width: 30%;
+    }
+    ul{
+        list-style-type: none;
+    }
+</style>
+
+<html>
+    <head>
+        <title>A Lenda de Flavious Josephus</title>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h3>Entrada</h3>
+                <hr/>
+                <form>
+                    <input id="n" type="text" placeholder="Pessoas"/>
+                    <input id="k" type="text" placeholder="Intervalo"/>
+                    <input id="submit" type="submit" value="Submit"/>
+                </form>
+                <ul id="cases">
+                    <li>1 | 5 2</li>
+                    <li>2 | 6 3</li>
+                    <li>3 | 1234 233</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Saída - Lista</h3>
+                <hr/>
+                <ul id="lista"></ul>
+            </div>
+            <div>
+                <h3>Saída - Indução</h3>
+                <hr/>
+                <ul id="inducao"></ul>
+            </div>    
+        </div>
+    </body>
+</html>
+
+
+<script>
+    let lista = document.getElementById("lista")
+    let inducao = document.getElementById("inducao")
+    let cases = document.getElementById("cases")
+
+    function calcLista(n, k){
+        let index = 0;
+        let army = [];
+
+        for (let i = 0; i < n; i++) { 
+            army[i] = i + 1;
+        }
+
+        for (let i = 1; i < n; i++) {
+            index += (k - 1);
+            while (index >= army.length){
+                index -= army.length;
+            }
+            kill = army.splice(index, 1); // Aqui da até pra pegar a sequência de quem morreu
+            console.log(kill, army, index)
+        }
+
+        let node = document.createElement("li");
+        node.appendChild(textnode = document.createTextNode('Case ' + (lista.childElementCount + 1) + ': ' + army));
+        return node;
+    }
+    
+    function calcInducao(n,k){
+        fn = 0 // F0 = 0
+        for (let i = 1; i <= n; i++){
+            fn = (fn + k) % i;
+        }
+        fn++ // Resultado é o índice, portanto soma-se 1 caso queira a posição
+
+        let node = document.createElement("li");
+        node.appendChild(document.createTextNode('Case ' + (inducao.childElementCount + 1) + ': ' + fn));
+        return node; 
+    }
+
+    function submit(e){
+            let inputN = parseInt(document.getElementById("n").value)
+            let inputK = parseInt(document.getElementById("k").value)
+            
+            lista.appendChild(calcLista(inputN, inputK))
+            inducao.appendChild(calcInducao(inputN, inputK))
+
+            let node = document.createElement("li");
+            node.appendChild(document.createTextNode((cases.childElementCount + 1) + ' | ' + inputN + ' ' + inputK));
+            cases.appendChild(node)
+            e.preventDefault();
+    }
+    document.getElementById("submit").addEventListener("click", submit)
+
+    
+    lista.appendChild(calcLista(5, 2))
+    inducao.appendChild(calcInducao(5, 2))
+    lista.appendChild(calcLista(6, 3))
+    inducao.appendChild(calcInducao(6, 3))
+    lista.appendChild(calcLista(1234, 233))
+    inducao.appendChild(calcInducao(1234, 233))
+</script>
