@@ -22,7 +22,7 @@ Aplicando-se os mesmo valores se obtem o mesmo resultado do programa.
 
 Técnica da lista
 
-Obs: É extremamente simples. Ele sempre segue somando o intervalo, posicionando a espada de acordo com a quantidade remanescente na roda.
+Obs: É extremamente simples e o primeiro que fiz. Ele sempre segue somando o intervalo, posicionando a espada de acordo com a quantidade remanescente na roda.
 Verifica se o index é maior que o tamanho da roda (lenght) para realizar um ou mais giros.
 
 Acredito ser o método mais simples e mais útil, considerando o leque de possibilidades que abre.
