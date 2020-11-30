@@ -8,7 +8,7 @@ Fn+1 = F0 ° Fn
 
 Obs: O "i" é a variável do loop (for). É o número de pessoas na roda, o qual aumenta conforma a indução até o número total "n".
 Substítui o "n-1" que seria utilizado no precesso reverso (mesmo resultado).
-Optei pelo loop e pelo "n+1" porque é mais fácil de visualizar o processo.
+Optei pelo loop e pelo "n+1" porque é mais fácil de visualizar.
 
 Obs: F0 e F1 dão 0 por não ter ninguém ou somente 1 pessoa.
 
@@ -26,3 +26,4 @@ Obs: É extremamente simples e o primeiro que fiz. Ele sempre segue somando o in
 Verifica se o index é maior que o tamanho da roda (lenght) para realizar um ou mais giros.
 
 Acredito ser o método mais simples e mais útil, considerando o leque de possibilidades que abre.
+Ademais, um ponto negativo é a necessidade de preencher a lista em um loop seperado, contudo, essa parte pode se tornar interessante na possível adição de nomes e características para as pessoas.
