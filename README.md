@@ -3,7 +3,7 @@
 
 Técnica de indução
 
-F0 (x) = (x + k) % i
+F0 (x) = (x + k) % i  
 Fn+1 = F0 ° Fn
 
 Obs: O "i" é a variável do loop (for). É o número de pessoas na roda, o qual aumenta conforma a indução até o número total "n".
@@ -19,7 +19,8 @@ F2 = F0 ° F1 = (((0 + k) % i1) + k) % i2
 F3 = F0 ° F2 = (((((0 + k) % i1) + k) % i2) + k) % i3    
 
 Aplicando-se os mesmo valores se obtem o mesmo resultado do programa.
-
+  
+  
 Técnica da lista
 
 Obs: É extremamente simples e o primeiro que fiz. Ele sempre segue somando o intervalo, posicionando a espada de acordo com a quantidade remanescente na roda.
