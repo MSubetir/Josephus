@@ -14,9 +14,9 @@ Obs: F0 e F1 dão 0 por não ter ninguém ou somente 1 pessoa.
 
 Exemplo: 
 
-F1 = F0 ° F0 = (0 + k) % i1   |   
-F2 = F0 ° F1 = (((0 + k) % i1) + k) % i2   |   
-F3 = F0 ° F2 = (((((0 + k) % i1) + k) % i2) + k) % i3   |   
+F1 = F0 ° F0 = (0 + k) % i1   
+F2 = F0 ° F1 = (((0 + k) % i1) + k) % i2    
+F3 = F0 ° F2 = (((((0 + k) % i1) + k) % i2) + k) % i3    
 
 Aplicando-se os mesmo valores se obtem o mesmo resultado do programa.
 
